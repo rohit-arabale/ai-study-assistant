@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Study Assistant Project Report</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: #1f2937;
+      line-height: 1.6;
+      margin: 0;
+      background: #f3f4f6;
+    }
+    .page {
+      max-width: 900px;
+      margin: 32px auto;
+      background: #ffffff;
+      padding: 48px 56px;
+      box-shadow: 0 12px 32px rgba(15, 23, 42, 0.12);
+    }
+    h1, h2, h3 {
+      color: #111827;
+      margin-top: 0;
+    }
+    h1 {
+      font-size: 32px;
+      margin-bottom: 8px;
+    }
+    h2 {
+      font-size: 22px;
+      margin-top: 32px;
+      border-bottom: 2px solid #e5e7eb;
+      padding-bottom: 8px;
+    }
+    p, li {
+      font-size: 15px;
+    }
+    .meta {
+      color: #6b7280;
+      margin-bottom: 24px;
+    }
+    .title-block {
+      text-align: center;
+      padding: 80px 24px 96px;
+    }
+    .title-block h1 {
+      font-size: 38px;
+    }
+    .subtitle {
+      font-size: 18px;
+      color: #4b5563;
+    }
+    .label {
+      font-weight: 700;
+      color: #374151;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    .small {
+      font-size: 13px;
+      color: #6b7280;
+    }
+  </style>
+</head>
+<body>
+  <div class="page title-block">
+    <h1>AI Study Assistant</h1>
+    <p class="subtitle">Project Report</p>
+    <p><span class="label">Project Type:</span> Full-Stack Web Application</p>
+    <p><span class="label">Frontend:</span> React + Vite</p>
+    <p><span class="label">Backend:</span> Node.js + Express + MongoDB</p>
+    <p><span class="label">AI Integration:</span> OpenRouter API</p>
+  </div>
+
+  <div class="page">
+    <h2>1. Title Page</h2>
+    <p><span class="label">Title:</span> AI Study Assistant</p>
+    <p><span class="label">Purpose:</span> A study management platform that helps users organize subjects and notes, then interact with an AI tutor for explanations and question answering.</p>
+
+    <h2>2. Abstract</h2>
+    <p>The AI Study Assistant project is a web-based academic support system designed to help students create subjects, manage study notes, and ask questions to an AI tutor. The application combines user authentication, subject-based note organization, and AI-assisted learning in one interface. The system uses a React frontend for user interaction, an Express and Node.js backend for API handling, MongoDB for persistent storage, and OpenRouter for AI responses. The project demonstrates how modern full-stack technologies can be integrated to improve personal learning workflows.</p>
+
+    <h2>3. Introduction</h2>
+    <p>Students often keep study material in scattered places such as notebooks, chat messages, or random text files. This makes revision difficult and reduces productivity. The AI Study Assistant addresses this by giving users a dedicated platform where they can store notes subject-wise and directly interact with an AI tutor based on those notes. The system is meant to simplify note organization and make revision more interactive and personalized.</p>
+
+    <h2>4. Problem Statement</h2>
+    <p>Many students face difficulty in organizing study material and quickly understanding saved content during revision. Traditional note-taking systems do not provide intelligent support. The problem this project solves is the lack of a single system that can both manage notes and help explain them interactively through AI.</p>
+
+    <h2>5. Literature Review</h2>
+    <p>Existing study tools usually focus on either note storage or AI chat, but not both together in a lightweight personal workflow. Note-taking apps provide organization, while AI chat tools provide explanation. However, students still need to manually move information between systems. This project combines subject management, note storage, and tutoring into one workflow, reducing friction and improving usability.</p>
+
+    <h2>6. Methodology</h2>
+    <ul>
+      <li>Requirements were identified around subject creation, note management, authentication, and AI question answering.</li>
+      <li>A MERN-style architecture was selected for ease of development and clear separation between frontend and backend.</li>
+      <li>The backend was built first with REST routes for authentication, subjects, notes, and chat.</li>
+      <li>The frontend was then developed to consume these APIs and provide a responsive user interface.</li>
+      <li>AI integration was added to the chat flow so users can ask questions related to saved notes.</li>
+      <li>UI refinements and layout fixes were applied to improve desktop and mobile usability.</li>
+    </ul>
+
+    <h2>7. Tools &amp; Technologies</h2>
+    <ul>
+      <li>Frontend: React, Vite, React Router, Axios, React Icons, Framer Motion</li>
+      <li>Backend: Node.js, Express.js, Axios</li>
+      <li>Database: MongoDB with Mongoose</li>
+      <li>Authentication: JWT, bcryptjs</li>
+      <li>AI Provider: OpenRouter API</li>
+      <li>Versioning and Development: npm, nodemon</li>
+    </ul>
+
+    <h2>8. System Design</h2>
+    <p>The system uses a client-server architecture. The React frontend handles routing and user interaction. The backend exposes REST APIs for registering users, logging in, creating subjects, adding notes, retrieving notes by subject, deleting notes, and chatting with AI. MongoDB stores users, subjects, and notes, with each subject and note tied to a specific authenticated user. The AI chat route fetches a selected note and sends the note content plus the student’s question to the OpenRouter API.</p>
+
+    <h2>9. Implementation</h2>
+    <ul>
+      <li>User registration and login were implemented with password hashing and JWT-based authentication.</li>
+      <li>Subject management allows users to create and fetch subject records linked to their account.</li>
+      <li>Note management supports note creation, listing by subject, and secure deletion.</li>
+      <li>Chat with AI was implemented through a protected route that reads note content and generates tutor-style responses.</li>
+      <li>The frontend includes separate pages for authentication, dashboard, notes, and AI chat.</li>
+      <li>Responsive styling and centered app-shell layout were added for improved desktop and mobile presentation.</li>
+    </ul>
+
+    <h2>10. Results &amp; Analysis</h2>
+    <p>The final system successfully supports the full basic study workflow: user authentication, subject creation, note creation, note viewing, note deletion, and AI-assisted question answering. The project also demonstrates stable integration between frontend and backend, plus a working connection to an external AI provider. From a usability perspective, the application is significantly more practical after layout improvements and better tutor-style AI prompting.</p>
+
+    <h2>11. Challenges &amp; Limitations</h2>
+    <ul>
+      <li>Initial issues were found in note saving and model import consistency in the backend.</li>
+      <li>Several screens behaved like narrow mobile layouts on desktop and required shared layout corrections.</li>
+      <li>AI integration required careful endpoint configuration and better prompt design to avoid repetitive answers.</li>
+      <li>The current AI quality depends on external API availability and provider limits.</li>
+      <li>There is no advanced note editing, tagging, or file upload support yet.</li>
+    </ul>
+
+    <h2>12. Future Scope</h2>
+    <ul>
+      <li>Add note editing and richer markdown support.</li>
+      <li>Generate quizzes, summaries, and flashcards directly from saved notes.</li>
+      <li>Add suggested AI questions in the chat interface.</li>
+      <li>Support attachments such as PDFs or images for study material.</li>
+      <li>Improve analytics, revision tracking, and personalized study recommendations.</li>
+      <li>Deploy the application with production-grade environment configuration.</li>
+    </ul>
+
+    <h2>13. Conclusion</h2>
+    <p>The AI Study Assistant is a practical full-stack learning application that combines note organization with AI-powered tutoring. It addresses a real student need by placing subjects, notes, and study help in one system. The project demonstrates how frontend development, backend API design, database modeling, authentication, and AI integration can work together to deliver a useful academic tool.</p>
+
+    <h2>14. References</h2>
+    <ul>
+      <li>React Documentation</li>
+      <li>Vite Documentation</li>
+      <li>Express.js Documentation</li>
+      <li>MongoDB and Mongoose Documentation</li>
+      <li>JWT Documentation</li>
+      <li>OpenRouter API Documentation</li>
+    </ul>
+
+    <h2>15. Appendix</h2>
+    <p><span class="label">Important Modules:</span> Authentication, Subject Management, Note Management, AI Chat</p>
+    <p><span class="label">Core Backend Files:</span> <code>backend/server.js</code>, <code>backend/controllers/authController.js</code>, <code>backend/controllers/subjectController.js</code>, <code>backend/controllers/noteController.js</code>, <code>backend/controllers/chatController.js</code>, <code>backend/services/aiService.js</code></p>
+    <p><span class="label">Core Frontend Pages:</span> <code>frontend/src/pages/Login.jsx</code>, <code>Register.jsx</code>, <code>Dashboard.jsx</code>, <code>NotesPage.jsx</code>, <code>ChatPage.jsx</code></p>
+    <p class="small">This report reflects the implemented project structure available in the current workspace.</p>
+  </div>
+</body>
+</html>

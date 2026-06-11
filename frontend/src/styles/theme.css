@@ -1,0 +1,73 @@
+:root {
+  --header-height: 88px;
+  --page-max-width: 1280px;
+  --app-shell-width: 1360px;
+  --surface: rgba(255, 255, 255, 0.72);
+  --surface-strong: rgba(255, 255, 255, 0.92);
+  --surface-tint: rgba(255, 248, 236, 0.78);
+  --hero-glow: rgba(221, 153, 67, 0.18);
+  --hero-glow-strong: rgba(14, 116, 144, 0.18);
+  --ring: rgba(14, 116, 144, 0.18);
+  --accent-2: #0e7490;
+  --accent-3: #f59e0b;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --surface: rgba(15, 20, 25, 0.82);
+    --surface-strong: rgba(15, 20, 25, 0.94);
+    --surface-tint: rgba(26, 31, 46, 0.86);
+    --hero-glow: rgba(217, 119, 6, 0.2);
+    --hero-glow-strong: rgba(6, 182, 212, 0.2);
+    --ring: rgba(34, 211, 238, 0.18);
+  }
+}
+
+body {
+  background:
+    radial-gradient(circle at top left, var(--hero-glow), transparent 34%),
+    radial-gradient(circle at top right, var(--hero-glow-strong), transparent 28%),
+    linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg) 42%, var(--bg-secondary) 100%);
+  background-attachment: fixed;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.28), transparent 82%);
+  opacity: 0.3;
+}
+
+.dashboard,
+.notes-page,
+.chat-page {
+  position: relative;
+  width: min(calc(100% - 32px), var(--app-shell-width));
+  margin: 0 auto;
+}
+
+.dashboard::before,
+.notes-page::before,
+.chat-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 10% 10%, rgba(245, 158, 11, 0.08), transparent 26%),
+    radial-gradient(circle at 90% 0%, rgba(14, 116, 144, 0.1), transparent 24%);
+}
+
+@media (max-width: 768px) {
+  .dashboard,
+  .notes-page,
+  .chat-page {
+    width: 100%;
+  }
+}

@@ -1,0 +1,123 @@
+.brand-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.brand-logo-center {
+  justify-content: center;
+}
+
+.brand-mark {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  flex: 0 0 auto;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  color: #ffffff;
+  background:
+    linear-gradient(135deg, #14b8a6 0%, #2563eb 52%, #7c3aed 100%);
+  box-shadow:
+    0 14px 30px -18px rgba(37, 99, 235, 0.85),
+    inset 0 1px 0 rgba(255, 255, 255, 0.28);
+}
+
+.brand-mark::after {
+  content: "";
+  position: absolute;
+  right: 7px;
+  top: 7px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #facc15;
+  box-shadow: 0 0 0 3px rgba(250, 204, 21, 0.18);
+}
+
+.brand-mark-icon {
+  width: 20px;
+  height: 20px;
+  stroke-width: 2.2;
+}
+
+.brand-wordmark {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 7px;
+  min-width: 0;
+  font-family: var(--heading);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+
+.brand-wordmark-primary {
+  color: var(--text-h);
+}
+
+.brand-wordmark-accent {
+  background: linear-gradient(135deg, #14b8a6, #7c3aed);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.brand-logo-sm .brand-mark {
+  width: 32px;
+  height: 32px;
+  border-radius: 9px;
+}
+
+.brand-logo-sm .brand-mark-icon {
+  width: 17px;
+  height: 17px;
+}
+
+.brand-logo-sm .brand-wordmark {
+  font-size: 1.15rem;
+}
+
+.brand-logo-md .brand-wordmark {
+  font-size: 1.45rem;
+}
+
+.brand-logo-lg {
+  flex-direction: column;
+  gap: 14px;
+}
+
+.brand-logo-lg .brand-mark {
+  width: 50px;
+  height: 50px;
+  border-radius: 14px;
+}
+
+.brand-logo-lg .brand-mark-icon {
+  width: 25px;
+  height: 25px;
+}
+
+.brand-logo-lg .brand-wordmark {
+  font-size: 1.55rem;
+}
+
+@media (max-width: 480px) {
+  .brand-logo-md .brand-wordmark {
+    font-size: 1.22rem;
+  }
+
+  .brand-logo-md .brand-mark {
+    width: 34px;
+    height: 34px;
+    border-radius: 9px;
+  }
+
+  .brand-logo-md .brand-mark-icon {
+    width: 18px;
+    height: 18px;
+  }
+}

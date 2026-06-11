@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <title>AI Study Assistant</title>
+
+    <style>
+      *, *::before, *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+        --accent: #6c63ff;
+        --accent-light: #a78bfa;
+        --accent-glow: rgba(108, 99, 255, 0.35);
+        --bg: #0f0f1a;
+        --surface: #1a1a2e;
+        --surface-2: #16162a;
+        --text: #e2e2f0;
+        --text-muted: rgba(180, 180, 210, 0.6);
+        --border: rgba(108, 99, 255, 0.18);
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        min-height: 100vh;
+        overflow-x: hidden;
+      }
+
+      /* Ambient background blobs */
+      body::before,
+      body::after {
+        content: '';
+        position: fixed;
+        border-radius: 50%;
+        filter: blur(80px);
+        pointer-events: none;
+        z-index: 0;
+        animation: float 12s ease-in-out infinite alternate;
+      }
+
+      body::before {
+        width: 500px;
+        height: 500px;
+        background: rgba(108, 99, 255, 0.12);
+        top: -150px;
+        left: -150px;
+      }
+
+      body::after {
+        width: 400px;
+        height: 400px;
+        background: rgba(167, 139, 250, 0.08);
+        bottom: -100px;
+        right: -100px;
+        animation-delay: -6s;
+      }
+
+      @keyframes float {
+        from { transform: translate(0, 0) scale(1); }
+        to   { transform: translate(30px, 20px) scale(1.05); }
+      }
+
+      #root {
+        position: relative;
+        z-index: 1;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 48px 20px 64px;
+        animation: fadeUp 0.6s ease both;
+      }
+
+      @keyframes fadeUp {
+        from { opacity: 0; transform: translateY(24px); }
+        to   { opacity: 1; transform: translateY(0); }
+      }
+
+      /* Utility classes your React components can reuse */
+      .card {
+        background: var(--surface);
+        border: 0.5px solid var(--border);
+        border-radius: 16px;
+        padding: 24px;
+        transition: border-color 0.2s, box-shadow 0.2s;
+      }
+
+      .card:hover {
+        border-color: rgba(108, 99, 255, 0.4);
+        box-shadow: 0 0 24px var(--accent-glow);
+      }
+
+      .btn-primary {
+        background: linear-gradient(135deg, var(--accent), var(--accent-light));
+        color: #fff;
+        border: none;
+        border-radius: 12px;
+        padding: 14px 28px;
+        font-family: "Poppins", sans-serif;
+        font-size: 15px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: opacity 0.2s, transform 0.15s;
+      }
+
+      .btn-primary:hover  { opacity: 0.9; transform: translateY(-1px); }
+      .btn-primary:active { opacity: 1;   transform: scale(0.98); }
+
+      .label {
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 1.2px;
+        color: var(--accent-light);
+        font-weight: 500;
+      }
+
+      .text-muted {
+        color: var(--text-muted);
+        font-size: 13px;
+      }
+
+      /* Progress bar */
+      .progress-track {
+        height: 5px;
+        background: rgba(108, 99, 255, 0.15);
+        border-radius: 4px;
+        overflow: hidden;
+      }
+
+      .progress-fill {
+        height: 100%;
+        background: linear-gradient(90deg, var(--accent), var(--accent-light));
+        border-radius: 4px;
+        transition: width 0.4s ease;
+      }
+
+      /* Scrollbar */
+      ::-webkit-scrollbar { width: 6px; }
+      ::-webkit-scrollbar-track { background: transparent; }
+      ::-webkit-scrollbar-thumb {
+        background: rgba(108, 99, 255, 0.3);
+        border-radius: 4px;
+      }
+
+      /* Selection */
+      ::selection {
+        background: rgba(108, 99, 255, 0.3);
+        color: #fff;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

@@ -1,0 +1,14 @@
+cd \ai-study-assistant\backend
+npm install
+npm run dev
+
+http://localhost:5001
+
+cd \ai-study-assistant\frontend
+npm install
+npm run dev
+
+http://localhost:5173
+
+iamrohitarabale@gmail.com
+
